@@ -5,16 +5,16 @@ using Sitecore.Diagnostics;
 using Sitecore.Form.Core.Configuration;
 using Sitecore.Form.Core.Pipelines.FormSubmit;
 using Sitecore.StringExtensions;
-using Sitecore.WFFM.Abstractions.Dependencies;
 using Sitecore.WFFM.Abstractions.Actions;
 using System;
 using System.Linq;
+using Sitecore.WFFM.Abstractions;
 
 namespace Sitecore.Support.Form.Core.Pipelines.FormSubmit
 {
     public class FormatMessage
     {
-        protected virtual string ClienMessage
+        protected virtual string ClientMessage
         {
             get
             {
@@ -64,7 +64,7 @@ namespace Sitecore.Support.Form.Core.Pipelines.FormSubmit
                             }
                         }
                     }
-                    failedArgs.Failures[i].ErrorMessage = this.ClienMessage;
+                    failedArgs.Failures[i].ErrorMessage = this.ClientMessage;
                 }
             }
         }
